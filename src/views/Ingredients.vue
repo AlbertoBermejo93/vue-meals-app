@@ -31,7 +31,7 @@
 
   const router = useRouter();
 
-  const keyword = ref("");
+  const keyword = ref(" ");
 
   const ingredients = ref([]);
 
