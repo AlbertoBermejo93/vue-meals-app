@@ -2,11 +2,7 @@
     <div class="p-8 pb-0">
       <h1 class="text-4xl font-bold mb-4 text-orange-500">Meals by Letter</h1>
     </div>
-    <div class="flex justify-center gap-2 mt-2">
-            <router-link :to="{name: 'byLetter', params: {letter}}" v-for="letter of lettters" :key="letter">
-                {{ letter }}
-            </router-link>
-    </div>
+  
     <div class="flex flex-wrap justify-center gap-3 px-8 mb-6">
       <router-link
         :to="{ name: 'byLetter', params: { letter } }"
@@ -29,8 +25,9 @@ import Meals from '../components/Meals.vue';
 import store from '../store'
 
 
-const lettters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
 const route = useRoute();
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const meals = computed(() => store.state.mealsByLetter)
 
 //we listen to the route change in order to get new data without reloading the page
